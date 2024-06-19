@@ -6,14 +6,14 @@ window.onload = () => loadModel();
 
 function loadModel() {
   const loader = new GLTFLoader();
-  loader.load('avatar.glb',
+  loader.load('/static/avatar.glb',  // Updated the path to the GLB file
     (gltf) => {
       setupScene(gltf);
       document.getElementById('avatar-loading').style.display = 'none';
     },
     (xhr) => {
       const percentCompletion = Math.round((xhr.loaded / xhr.total) * 100);
-      document.getElementById('avatar-loading').innerText = `LOADING... ${percentCompletion}%`
+      document.getElementById('avatar-loading').innerText = `LOADING... ${percentCompletion}%`;
       console.log(`Loading model... ${percentCompletion}%`);
     },
     (error) => {
@@ -91,11 +91,11 @@ function setupScene(gltf) {
 
   // Load animations
   const mixer = new THREE.AnimationMixer(avatar);
-  const clip = gltf.animations[0]; // Asume que hay una sola animación en el modelo
+  const clip = gltf.animations[0]; // Assume there is a single animation in the model
   const action = mixer.clipAction(clip);
-  action.play(); // Reproduce la animación
+  action.play(); // Play the animation
 
-  // Verifica la duración de la animación
+  // Log animation duration
   console.log('Animation duration:', clip.duration);
 
   window.addEventListener('resize', () => {
@@ -108,7 +108,7 @@ function setupScene(gltf) {
   function animate() {
     requestAnimationFrame(animate);
     const deltaTime = clock.getDelta();
-    mixer.update(deltaTime); // Actualiza la animación
+    mixer.update(deltaTime); // Update the animation
     renderer.render(scene, camera);
   }
 
