@@ -1,0 +1,158 @@
+/* General styles */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  margin: 0;
+  background: linear-gradient(0deg, #080808, #1f1e28);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header & Navigation styles */
+header {
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 30px;
+}
+
+nav ul li a {
+  color: #919090;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+/* Section styles */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1, h2 {
+  font-size: 3em;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.5em;
+  color: rgb(163, 163, 163);
+}
+
+/* Specific section styles */
+#avatar-container {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#avatar-loading {
+  font-size: 3em;
+}
+
+.skills-container, .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill, .project {
+  background: #1f1e28;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  width: 250px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.skill:hover, .project:hover {
+  transform: scale(1.05);
+  background: #2e2c39;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+form input, form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(-45deg, rgb(177, 8, 189), rgb(88, 186, 255));
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: linear-gradient(-45deg, rgb(88, 186, 255), rgb(177, 8, 189));
+}
+
+/* Animations */
+.animate__animated {
+  visibility: visible !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 2.5em;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  .skill, .project {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 2em;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  .skill, .project {
+    width: 90%;
+  }
+}

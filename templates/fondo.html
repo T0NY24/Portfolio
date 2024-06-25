@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantalla de Carga GTA 4</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='fondo.css') }}">
+    <title>Fondo Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fondo.css') }}">
+    
 </head>
 <body>
+    <div class="container"></div>
     <div class="loading-screen">
         <div class="background"></div>
         <div class="character"></div>
         <div class="buttons">
-            <button class="btn" id="continue">Continuar</button>
-            <button class="btn" id="exit">Salir</button>
+            <!-- Agregar la clase de animación cuando se hace clic -->
+            <a href="{{ url_for('index') }}" class="btn btn-success">Ir a Index</a>
+            <a href="{{ url_for('cv') }}" class="btn btn-success">Ir a CV</a>
+            <button class="btn" onclick="window.close();">Salir</button>
         </div>
     </div>
-</body>
-</html>
